@@ -68,8 +68,8 @@ jobs:
           curl -sSL ${trackerslist} | grep -i '\.[A-Z]' | awk -F'[/:]' '{print $4}' | sed 's/^/    - /' >> ./clash-config/geodata-fakeip-user.yaml
           cat <<EOF >> ./clash-config/geodata-fakeip-user.yaml
             nameserver:
-              - quic://dns.alidns.com:853
               - https://doh.pub/dns-query
+              - https://dns.alidns.com/dns-query
               
           EOF
 
@@ -124,12 +124,12 @@ jobs:
             enhanced-mode: fake-ip
             fake-ip-filter: ['+.*']
             nameserver:
-              - quic://dns.alidns.com:853
               - https://doh.pub/dns-query
+              - https://dns.alidns.com/dns-query
             nameserver-policy:
               'geosite:ads': rcode://success
-              'geosite:cn': [quic://dns.alidns.com:853, https://doh.pub/dns-query]
-              'geosite:proxy': ['https://dns.google/dns-query#h3=true', 'https://cloudflare-dns.com/dns-query#h3=true']
+              'geosite:cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
+              'geosite:proxy': [https://dns.google/dns-query, https://cloudflare-dns.com/dns-query]
           EOF
 
       - name: Generate `clash` geodata-redirhost-user-noprocess.yaml
@@ -186,8 +186,8 @@ jobs:
               },
               "servers": [
                 { "tag": "dns_block", "address": "rcode://success" },
-                { "tag": "dns_direct", "address": [ "h3://dns.alidns.com/dns-query", "https://doh.pub/dns-query" ], "detour": "DIRECT" },
-                { "tag": "dns_proxy", "address": [ "h3://dns.google/dns-query", "h3://cloudflare-dns.com/dns-query" ] },
+                { "tag": "dns_direct", "address": [ "https://doh.pub/dns-query", "https://dns.alidns.com/dns-query" ], "detour": "DIRECT" },
+                { "tag": "dns_proxy", "address": [ "https://dns.google/dns-query", "https://cloudflare-dns.com/dns-query" ] },
                 { "tag": "dns_fakeip", "address": "fakeip" }
               ],
               "rules": [
