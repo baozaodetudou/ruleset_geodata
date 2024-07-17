@@ -42,9 +42,9 @@ jobs:
 
           geodata-mode: true
           geox-url:
-            geosite: "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/geosite.dat"
-            geoip: "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/geoip-lite.dat"
-            mmdb: "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/Country-lite.mmdb"
+            geosite: "https://cdn.jsdelivr.net/gh/baozaodetudou/ruleset_geodata@clash/geosite.dat"
+            geoip: "https://cdn.jsdelivr.net/gh/baozaodetudou/ruleset_geodata@clash/geoip-lite.dat"
+            mmdb: "https://cdn.jsdelivr.net/gh/baozaodetudou/ruleset_geodata@clash/Country-lite.mmdb"
           geo-auto-update: true
           geo-update-interval: 24
 
@@ -103,9 +103,9 @@ jobs:
 
           geodata-mode: true
           geox-url:
-            geosite: "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/geosite.dat"
-            geoip: "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/geoip-lite.dat"
-            mmdb: "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@clash/Country-lite.mmdb"
+            geosite: "https://cdn.jsdelivr.net/gh/baozaodetudou/ruleset_geodata@clash/geosite.dat"
+            geoip: "https://cdn.jsdelivr.net/gh/baozaodetudou/ruleset_geodata@clash/geoip-lite.dat"
+            mmdb: "https://cdn.jsdelivr.net/gh/baozaodetudou/ruleset_geodata@clash/Country-lite.mmdb"
           geo-auto-update: true
           geo-update-interval: 24
 
