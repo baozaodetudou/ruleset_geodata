@@ -61,7 +61,7 @@ jobs:
         run: |
           mkdir -p ./community/mydata/
           archs1=(ads private microsoft-cn apple-cn google-cn games-cn ai networktest netflix disney max primevideo appletv youtube tiktok bilibili proxy cn pt)
-          archs2=(ads private microsoft-cn apple-cn google-cn games-cn ai networktest proxy cn)
+          archs2=(ads private microsoft-cn apple-cn google-cn games-cn ai networktest proxy cn pt)
 
           # Generate `clash` geosite-all.dat
           for ((i = 0; i < 18; i++)); do
