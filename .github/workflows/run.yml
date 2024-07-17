@@ -133,7 +133,7 @@ jobs:
           ips=(netflixip telegramip privateip cnip)
 
           # Generate `clash` rule-set (yaml)
-          for ((i = 0; i < 17; i++)); do
+          for ((i = 0; i < 18; i++)); do
             echo 'payload:' > "./clash-ruleset/${domains[i]}.yaml"
             curl -sSL "${domains_download_url}/${domains[i]}.list" | grep -E 'DOMAIN,|DOMAIN-SUFFIX,' | sed -e "s/^DOMAIN,/  - '/" -e "s/^DOMAIN-SUFFIX,/  - '+\./" -e "s/$/'/" >> "./clash-ruleset/${domains[i]}.yaml"
           done
@@ -149,7 +149,7 @@ jobs:
           done
 
           # Generate `clash` rule-set (text)
-          for ((i = 0; i < 17; i++)); do
+          for ((i = 0; i < 18; i++)); do
             curl -sSL "${domains_download_url}/${domains[i]}.list" | grep -E 'DOMAIN,|DOMAIN-SUFFIX,' | sed -e 's/^DOMAIN,//' -e 's/^DOMAIN-SUFFIX,/+\./' > "./clash-ruleset/${domains[i]}.list"
           done
 
@@ -162,7 +162,7 @@ jobs:
           done
 
           # Ready for generate `sing-box` rule_set
-          for ((i = 0; i < 17; i++)); do
+          for ((i = 0; i < 18; i++)); do
             mkdir -p "./tools/rules/${domains[i]}/"
             curl "${domains_download_url}/${domains[i]}.list" | grep -E 'DOMAIN,|DOMAIN-SUFFIX,|DOMAIN-KEYWORD' > "./tools/rules/${domains[i]}/${domains[i]}.yaml"
           done
