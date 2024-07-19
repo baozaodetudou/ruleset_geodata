@@ -127,8 +127,8 @@ jobs:
               - https://dns.alidns.com/dns-query
             nameserver-policy:
               'geosite:ads': rcode://success
-              'geosite:cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
               'geosite:proxy': [https://dns.google/dns-query, https://cloudflare-dns.com/dns-query]
+              'geosite:cn': [https://doh.pub/dns-query, https://dns.alidns.com/dns-query]
           EOF
 
       - name: Generate `clash` geodata-redirhost-user-noprocess.yaml
@@ -194,8 +194,8 @@ jobs:
                 { "clash_mode": "Direct", "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
                 { "clash_mode": "Global", "query_type": [ "A", "AAAA" ], "server": "dns_proxy" },
                 { "geosite": [ "ads" ], "server": "dns_block", "disable_cache": true, "rewrite_ttl": 0 },
-                { "geosite": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
                 { "geosite": [ "proxy" ], "query_type": [ "A", "AAAA" ], "server": "dns_fakeip", "rewrite_ttl": 0 },
+                { "geosite": [ "cn" ], "query_type": [ "A", "AAAA" ], "server": "dns_direct" },
                 { "fallback_rules": [ { "geoip": [ "cn" ], "server": "dns_direct" }, { "match_all": true, "server": "dns_fakeip", "rewrite_ttl": 0 } ], "allow_fallthrough": true, "server": "dns_proxy" }
               ],
               "final": "dns_direct",
