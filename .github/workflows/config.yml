@@ -70,7 +70,6 @@ jobs:
             nameserver:
               - https://doh.pub/dns-query
               - https://dns.alidns.com/dns-query
-              
           EOF
 
       - name: Generate `clash` geodata-fakeip-user-noprocess.yaml
